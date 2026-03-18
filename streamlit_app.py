@@ -46,7 +46,7 @@ def umbral_objetivo(nota_objetivo: int) -> float:
 
 
 def nota_necesaria_final(resto_componentes: float, peso_final: float, nota_objetivo: int) -> float:
-    umbral = umbral_objetivo(nota_objetivo) + 0.01
+    umbral = umbral_objetivo(nota_objetivo)
     return (umbral - resto_componentes) / peso_final
 
 
@@ -278,7 +278,7 @@ else:
         else:
             st.success(f"Debes sacar al menos un **{necesaria:.2f}** en el final.")
             st.info(
-                f"Esto se ha calculado teniendo en cuenta que para redondear a **{meta}** necesitas superar el **{umbral_objetivo(meta) + 0.01:.2f}**."
+                f"Esto se ha calculado teniendo en cuenta que para redondear a **{meta}** necesitas superar el **{umbral_objetivo(meta):.2f}**."
             )
 
     st.markdown('</div>', unsafe_allow_html=True)
