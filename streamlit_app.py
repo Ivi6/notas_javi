@@ -141,9 +141,15 @@ st.markdown("""
         color: #111827 !important;
     }
 
+    /* Campo number_input: texto oscuro para que se vea sobre fondo claro */
     .stNumberInput input {
         border-radius: 12px !important;
-        color: #f8fafc !important;
+        color: #111827 !important;
+        background-color: #ffffff !important;
+    }
+
+    .stNumberInput input::placeholder {
+        color: #6b7280 !important;
     }
 
     .stButton > button {
