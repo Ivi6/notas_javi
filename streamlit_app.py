@@ -42,14 +42,11 @@ def calcular_media(notas: dict, pesos: dict) -> float:
 
 
 def umbral_objetivo(nota_objetivo: int) -> float:
-    # Para redondear a N, hay que superar N - 0.49
-    # Ejemplo: para sacar 7 redondeado, hay que superar 6.51
     return nota_objetivo - 0.49
 
 
 def nota_necesaria_final(resto_componentes: float, peso_final: float, nota_objetivo: int) -> float:
-    # Añadimos 0.01 para reflejar el "más de 6.51"
-    umbral = umbral_objetivo(nota_objetivo)
+    umbral = umbral_objetivo(nota_objetivo) + 0.01
     return (umbral - resto_componentes) / peso_final
 
 
@@ -85,7 +82,7 @@ st.markdown("""
         margin-top: 10px;
         margin-bottom: 0;
         font-size: 1.02rem;
-        opacity: 0.96;
+        color: #eef4ff;
     }
 
     .section-box {
@@ -111,13 +108,42 @@ st.markdown("""
         color: #9ec5ff;
     }
 
+    h1, h2, h3 {
+        color: #f8fafc !important;
+    }
+
+    p, label, .stMarkdown, .stText {
+        color: #e5e7eb !important;
+    }
+
+    .stRadio label,
+    .stSelectbox label,
+    .stNumberInput label {
+        color: #f1f5f9 !important;
+        font-weight: 600 !important;
+    }
+
+    div[role="radiogroup"] label {
+        color: #f8fafc !important;
+        opacity: 1 !important;
+    }
+
+    div[role="radiogroup"] p {
+        color: #f8fafc !important;
+    }
+
     div[data-baseweb="select"] > div,
     div[data-baseweb="input"] > div {
         border-radius: 14px !important;
     }
 
+    .stSelectbox div[data-baseweb="select"] * {
+        color: #111827 !important;
+    }
+
     .stNumberInput input {
         border-radius: 12px !important;
+        color: #f8fafc !important;
     }
 
     .stButton > button {
@@ -138,7 +164,7 @@ st.markdown("""
 
     .footer-text {
         text-align: center;
-        color: #94a3b8;
+        color: #cbd5e1 !important;
         margin-top: 12px;
         font-size: 0.95rem;
     }
@@ -246,9 +272,12 @@ else:
         else:
             st.success(f"Debes sacar al menos un **{necesaria:.2f}** en el final.")
             st.info(
-                f"Esto se ha calculado teniendo en cuenta que para redondear a **{meta}** necesitas superar el **{umbral_objetivo(meta):.2f}**."
+                f"Esto se ha calculado teniendo en cuenta que para redondear a **{meta}** necesitas superar el **{umbral_objetivo(meta) + 0.01:.2f}**."
             )
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown('<p class="footer-text">Hecho con Streamlit para calcular medias y objetivos de examen.</p>', unsafe_allow_html=True)
+st.markdown(
+    '<p class="footer-text">Hecho con Streamlit para calcular medias y objetivos de examen.</p>',
+    unsafe_allow_html=True
+)
