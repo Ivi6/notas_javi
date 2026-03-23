@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Calculadora de notas",
+    page_title="Calculadora de notas Ivan",
     page_icon="📚",
     layout="centered"
 )
