@@ -284,6 +284,6 @@ else:
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown(
-    '<p class="footer-text">Hecho con Streamlit para calcular medias y objetivos de examen. Lucas gracioso</p>',
+    '<p class="footer-text">Hecho con Streamlit para calcular medias y objetivos de examen.</p>',
     unsafe_allow_html=True
 )
