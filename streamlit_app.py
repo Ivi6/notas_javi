@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Calculadora de notas Ivan",
+    page_title="Calculadora de notas",
     page_icon="📚",
     layout="centered"
 )
@@ -179,7 +179,7 @@ st.markdown("""
 
 st.markdown("""
 <div class="hero">
-    <h1>📚 Calculadora de notas</h1>
+    <h1>📚 Calculadora de notas Ivan</h1>
     <p>Calcula tu media o descubre cuánto necesitas sacar en el examen final.</p>
 </div>
 """, unsafe_allow_html=True)
