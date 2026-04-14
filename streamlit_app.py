@@ -8,9 +8,8 @@ st.set_page_config(
 
 SUBJECTS = {
     "Inglés": {
-        "Speaking": 0.20,
-        "Parcial": 0.24,
-        "Final": 0.56,
+        "Parcial": 0.30,
+        "Final": 0.70,
     },
     "Lengua": {
         "Comportamiento": 0.20,
@@ -31,8 +30,9 @@ SUBJECTS = {
         "Final": 0.70,
     },
     "Física": {
-        "Parcial": 0.30,
-        "Final": 0.70,
+        "Ejercicios subida de nota": 0.10,
+        "Parcial": 0.27,
+        "Final": 0.63,
     },
 }
 
